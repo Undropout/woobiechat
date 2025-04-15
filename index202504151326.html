@@ -24,7 +24,6 @@ __        __          _     _
 
     <label for="message">Type a message</label>
     <input id="message" type="text" placeholder="Type a message...">
-
     <div id="emoji-bar">
       <button onclick="insertEmote('👋')">wave</button>
       <button onclick="insertEmote('💃🕺')">dance</button>
@@ -32,7 +31,8 @@ __        __          _     _
       <button onclick="insertEmote('👍')">thumbsup</button>
       <button onclick="insertEmote('🤗🫂')">hug</button>
     </div>
-
+    
+    
     <button onclick="sendMessage()">Send</button>
   </div>
 
@@ -40,5 +40,6 @@ __        __          _     _
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
   <script src="script.js"></script>
   <div id="scanlines" aria-hidden="true"></div>
+
 </body>
 </html>
