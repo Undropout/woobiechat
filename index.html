@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Woobie Chatroom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="chat-container">
+    <h2>Woobie Chat</h2>
+    <pre id="ascii-art">
+__        __           _     _       
+ \ \      / /__   ___  | |__ (_) __    
+\ \ /\ / / _ \/  _ \ |'_ \| |/ _ \ 
+  \ V  V / (_) | (_) | |_) | |  __/  
+   \_/\_/ \___/ \___/|_.__/|_|\___| </pre>
+
+    <div id="messages" aria-live="polite" role="log"></div>
+
+    <label for="username">Your name</label>
+    <input id="username" type="text" class="block-cursor" placeholder="Your name" aria-readonly="true" tabindex="-1" readonly>
+
+    <label for="message">Type a message</label>
+    <input id="message" type="text" placeholder="Type a message...">
+
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

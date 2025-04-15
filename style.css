@@ -1,0 +1,135 @@
+body {
+    background-color: black;
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  #messages div {
+    margin-bottom: 0.75rem; /* creates vertical spacing */
+  }
+  #chat-container {
+    width: 600px;
+    border: 2px solid #33ff33;
+    padding: 1rem;
+    box-shadow: 0 0 10px #33ff33;
+    background-color: black;
+  }
+  
+  h2 {
+    text-align: center;
+    border-bottom: 1px solid #33ff33;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .my-message {
+    color: #33ff33; /* retro green */
+  }
+  
+  .other-message {
+    color: #ffcc66; /* monochrome amber/gold */
+  }
+  #messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px dashed #33ff33;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    font-size: 1rem;
+    background-color: black;
+  }
+  
+  input, button {
+    background-color: black;
+    border: 1px solid #33ff33;
+    color: #33ff33;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #33ff33;
+  }
+  
+  button:hover {
+    background-color: #003300;
+    cursor: pointer;
+  }
+  
+  /* Optional: Blinking cursor effect */
+  input::placeholder,
+  #message::placeholder {
+    color: #33ff33;
+    opacity: 0.5;
+  }
+  
+  /* Optional: Flicker/glow animation */
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; } /* barely dips */
+  }
+  body, #chat-container, #messages {
+    animation: flicker 4s ease-in-out infinite;
+  }
+  
+  .blink {
+    display: inline-block;
+    animation: blink 1s step-start infinite;
+  }
+  input[type="text"]::placeholder,
+input[type="text"] {
+  caret-color: #33ff33; /* makes the cursor match the retro green */
+}
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  #ascii-art {
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+    white-space: pre;
+    animation: flicker 1.5s infinite;
+  }    
+  #boot-msg {
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 1rem;
+    text-align: center;
+    animation: blink 1s step-start infinite;
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  input.block-cursor {
+    caret-color: transparent; /* Hide real blinking bar */
+    position: relative;
+  }
+  
+  input.block-cursor:focus::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 20px;
+    background: #33ff33;
+    animation: blink-block 1s step-start infinite;
+  }
+  
+  @keyframes blink-block {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  

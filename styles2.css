@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+  margin: 0;
+  background: black;
+  color: #33ff33; /* CRT green */
+  font-family: 'Share Tech Mono', monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#crt-wrapper {
+  width: 90vw;
+  max-width: 800px;
+  height: 90vh;
+  border: 2px solid #33ff33;
+  padding: 16px;
+  box-shadow: 0 0 10px #33ff33;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#crt-screen {
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#chat-log {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+input {
+  background: black;
+  border: none;
+  color: #33ff33;
+  font-size: 1rem;
+  flex-grow: 1;
+  padding: 4px;
+  font-family: 'Share Tech Mono', monospace;
+  outline: none;
+}
+
+.prompt {
+  margin-right: 6px;
+  color: #33ff33;
+}
+.third-message {
+  color: #66ccff; /* cool CRT blue */
+}
+
+.fourth-message {
+  color: #cc66ff; /* CRT-magenta, synthwave purple */
+}

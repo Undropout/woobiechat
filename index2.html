@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Woobiepunk CRT Chat</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00FF00;
+      margin: 0;
+      padding: 20px;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .chat-log {
+      height: 90%;
+      overflow-y: auto;
+      padding-right: 10px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .chat-input {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+    }
+
+    input[type="text"] {
+      background: black;
+      color: #00FF00;
+      border: none;
+      border-top: 1px solid #333;
+      font-size: 1rem;
+      padding: 10px;
+      width: 100%;
+      outline: none;
+    }
+
+    .green { color: #00FF00; }     /* You */
+    .amber { color: #FFBF00; }     /* Others */
+    .blue  { color: #00BFFF; }     /* Bots / System */
+    .magenta { color: #FF00FF; }   /* Emoji / Fun */
+
+    /* Scanlines */
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        transparent 0px,
+        transparent 2px,
+        rgba(0, 255, 0, 0.03) 2px,
+        rgba(0, 255, 0, 0.03) 4px
+      );
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-log" id="chatLog">
+    <div class="blue">[system] 🖧 Connecting to node 67FB...</div>
+    <div class="blue">[system] ✅ Handshake complete. Welcome, Radiant Gold Fox.</div>
+    <div class="green">You: I brought my best vibes today 🌈</div>
+    <div class="amber">Shy Dolphin: That’s what I like to hear 💫</div>
+    <div class="magenta">🎶 ::dance:: 🎶</div>
+    <div class="amber">Shy Dolphin: HOW DID YOU DO THAT</div>
+    <div class="green">You: Woobiepunk magic 😎</div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="> Type a message..." />
+  </div>
+
+  <script>
+    const input = document.getElementById('messageInput');
+    const log = document.getElementById('chatLog');
+
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const message = input.value.trim();
+        if (message) {
+          const div = document.createElement('div');
+          div.classList.add('green');
+          div.textContent = `You: ${message}`;
+          log.appendChild(div);
+          input.value = '';
+          log.scrollTop = log.scrollHeight;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
