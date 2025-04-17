@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["http://127.0.0.1:5500"],
+    "method": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    "responseHeader": ["Content-Type", "Authorization", "X-Requested-With", "x-goog-upload-protocol", "x-goog-upload-command", "x-goog-upload-header-content-type", "x-goog-upload-header-content-length", "x-firebase-storage-version"],
+    "maxAgeSeconds": 3600
+  }
+]

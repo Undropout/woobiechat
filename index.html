@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +32,30 @@ __        __          _     _
       <button onclick="insertEmote('🤗🫂')">hug</button>
     </div>
 
+    <label for="image-upload">Upload an image</label>
+    <input type="file" id="image-upload" accept="image/*">
+    <input type="text" id="image-alt" placeholder="Describe the image for your partner (required)">
+    <button onclick="sendImage()">Send Image</button>
+
     <button onclick="sendMessage()">Send</button>
   </div>
 
+  <!-- Firebase scripts -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+  <!-- Main script -->
   <script src="script.js"></script>
+  
+  <!-- Scanline aesthetic -->
   <div id="scanlines" aria-hidden="true"></div>
+
+  <div id="image-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; align-items:center; justify-content:center; z-index:1000;">
+    <img id="modal-img" style="max-width:90vw; max-height:90vh; border: 3px solid #33ff33;">
+  </div>
+  
+
+
 </body>
 </html>
